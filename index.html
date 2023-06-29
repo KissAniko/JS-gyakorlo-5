@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eseménykezelés 1.</title>
+</head>
+<body>
+   
+<!-------------------------------------------------------------DÁTUM------------------------------------------------------------- -->
+    <button onclick =' document.getElementById("demo").innerHTML=Date()'>Katt ide és megmutatom az időt'<br>
+                                                                         Ha újra kattintasz, frissül az időpont.</button>
+
+    <p id = "demo"></p>
+<!--------------------------------------------------------------------------------------------------------------------------------- -->
+<button onclick = "this.innerHTML = Date()">Kattins ide és a gomb helyén megjelenik az idő! <br>
+                                            Ha újra kattintasz, frissül az időpont. </button>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+ <br>
+ <br> 
+<button onclick = "displayDate()">Megmutatom az időt!<br>
+                                  Ha újra kattintasz, frissül.</button>
+<p id = "demo1"></p>
+
+<script>
+    function displayDate(){
+    document.getElementById("demo1").innerHTML = Date();
+    }
+    </script>
+<!-------------------------------------------------------------FORMÁZÁS-------------------------------------------------------------- -->
+<hr>
+</body>
+    <button onclick="myFunction()">Katt ide és a szöveg megváltozik!</button>
+    <p id = "demo2"> Az új szöveg színe kék lesz, mérete pedig 25px.</p>
+ 
+    <script>
+        function myFunction(){
+             let x = document.getElementById("demo2");
+             x.style.fontSize = "25px";
+             x.style.color = "blue";
+             document.getElementById("demo2").innerHTML= "Gratulákok, ügyesen megváltoztattad a szöveget.";
+        }
+    </script>
+<body>
+<hr>
+<!--------------------------------------------------------------------------------------------------------------------------------------->
+ 
+<input id="bejegyzes"></input>
+
+<button onclick="rogzit()" Width="50px" Height="20px">Rögzítés</button>
+<table>
+   <tr>
+      <th id="nev">Név</th>
+   </tr>
+</table>
+<script>
+function  rogzit(){
+    const nevInput = document.getElementById("bejegyzes");
+    const nevTabla = document.getElementById("nev")
+    const nev = nevInput.value;
+
+    const ujSor = document.createElement("tr");
+    const ujCella = document.createElement("td");
+    const nevSzoveg = document.createTextNode(nev);
+
+    nevTabla.appendChild(ujSor);
+    ujSor.appendChild(ujCella);
+    ujCella.appendChild(nevSzoveg);
+ 
+
+    nevInput.value = "";
+
+}
+
+</script>
+
+</body>
+</html>
